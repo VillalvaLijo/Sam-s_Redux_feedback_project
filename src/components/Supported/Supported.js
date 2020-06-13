@@ -8,6 +8,11 @@ import NumericInput from 'react-numeric-input';
 class Supported extends Component{
 
 
+    //create a function to route to the next page (Comments) on the click of the next button
+    nextClick = () => {
+        this.props.history.push('/comments');
+    }
+
     render(){
         return(
             <div>

@@ -7,6 +7,7 @@ import './App.css';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments'
 
 class App extends Component {
   render() {
@@ -32,7 +33,7 @@ class App extends Component {
             props.history in Feelings.js */}
             <Route path='/understanding' component={Understanding}/>
             <Route path='/supported' component={Supported}/>
-            {/* <Route path='/comments' component={Comments}/> */}
+            <Route path='/comments' component={Comments}/>
           </Router>
 
         </section>
