@@ -18,6 +18,13 @@ class App extends Component {
         <section>
           {/* establish routes for all the feedback pages */}
           <Router>
+            {/* create an intial landing page to greet the user */}
+            <div id="inital landing page">
+              <p>Please enter your feedback for the day, in order that we may better understand your needs and serve you</p>
+             {/* Wrap button tag inside of a Link tag in order to call link on button click*/}
+             <Link to = '/feelings'><button >Begin Feedback</button></Link>
+            </div>
+            {/* Route to different components */}
             <Route path='/feelings' component={Feelings}/>
             {/* <Route path='/comments' component={Comments}/> */}
           </Router>
