@@ -7,12 +7,18 @@ import NumericInput from 'react-numeric-input';
 class Understanding extends Component {
     
 
+    //create a function to route to the next page (Supported) on the click of the next button
+    nextClick = () => {
+        this.props.history.push('/supported');
+    }
+
+
     render(){
         return (
             <form>
                 <h1>How well do you understand the material?</h1>
                 <NumericInput min={0} max={5} value={1}/>
-                <button>Next</button>
+                <button onClick = {this.nextClick}>Next</button>
             </form>
 
         )
