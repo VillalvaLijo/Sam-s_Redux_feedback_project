@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 //import components from JS pages in order to link the routes.
 import Feelings from '../Feelings/Feelings';
+import Understanding from '../Understanding/Understanding'
 
 class App extends Component {
   render() {
@@ -26,6 +27,9 @@ class App extends Component {
             </div>
             {/* Route to different components */}
             <Route path='/feelings' component={Feelings}/>
+            {/* Understanding must be imported here in order for it to be accesed by 
+            props.history in Feelings.js */}
+            <Route path='/understanding' component={Understanding}/>
             {/* <Route path='/comments' component={Comments}/> */}
           </Router>
 

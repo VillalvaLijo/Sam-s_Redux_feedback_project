@@ -10,6 +10,10 @@ import NumericInput from 'react-numeric-input';
 
 class Feelings extends Component{
 
+    //create a function to route to the next page (understanding) on the click of the next button
+    nextClick = () => {
+        this.props.history.push('/understanding');
+    }
 
     //wrap compoenent in a provider
     render(){
@@ -21,7 +25,7 @@ class Feelings extends Component{
                 <form id='feelingInputForm'>
                     <p>Feeling:</p>
                 <NumericInput min={0} max={5} value={1}/>
-                <button >Next</button>
+                <button onClick = {this.nextClick}>Next</button>
                 </form>
 
 
@@ -35,5 +39,7 @@ class Feelings extends Component{
 // const mapStateToProps = (reduxStore) => ({ reduxStore})
 
 // export default connect(mapStateToProps)(Feelings);
+
+//compiled without redux state
 export default Feelings;
 
