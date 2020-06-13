@@ -7,7 +7,10 @@ import './App.css';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
-import Comments from '../Comments/Comments'
+import Comments from '../Comments/Comments';
+import Review from '../Review/Review'
+import Submitted from '../SubmissionPage/SubmissionPage';
+import Home from '../Home/Home';
 
 class App extends Component {
   render() {
@@ -21,12 +24,8 @@ class App extends Component {
         <section>
           {/* establish routes for all the feedback pages */}
           <Router>
-            {/* create an intial landing page to greet the user */}
-            <div id="inital landing page">
-              <p>Please enter your feedback for the day, in order that we may better understand your needs and serve you</p>
-             {/* Wrap button tag inside of a Link tag in order to call link on button click*/}
-             <Link to = '/feelings'><button >Begin Feedback</button></Link>
-            </div>
+            {/* Create a home page route */}
+            <Route exact path= "/" component={Home}/>
             {/* Route to different components */}
             <Route path='/feelings' component={Feelings}/>
             {/* Understanding must be imported here in order for it to be accesed by 
@@ -34,6 +33,8 @@ class App extends Component {
             <Route path='/understanding' component={Understanding}/>
             <Route path='/supported' component={Supported}/>
             <Route path='/comments' component={Comments}/>
+            <Route path='/review' component={Review}/>
+            <Route path='/submissionpage' component={Submitted}/>
           </Router>
 
         </section>
