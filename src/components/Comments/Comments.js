@@ -1,6 +1,7 @@
 //import dependencies onto page
 import React from 'react';
 import {Component} from 'react';
+import {connect} from 'react-redux';
 
 class Comments extends Component {
 
@@ -23,4 +24,4 @@ class Comments extends Component {
     }
 }
 
-export default Comments;
+export default connect()(Comments);

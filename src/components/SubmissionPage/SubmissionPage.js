@@ -1,6 +1,7 @@
 //import dependencies onto page
 import React from 'react';
 import {Component} from 'react';
+import {connect} from 'react-redux';
 
 class Submitted extends Component{
 
@@ -18,4 +19,4 @@ class Submitted extends Component{
     }
 }
 
-export default Submitted;
+export default connect()(Submitted);

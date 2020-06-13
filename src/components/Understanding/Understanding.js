@@ -3,6 +3,7 @@ import React from 'react';
 import {Component} from 'react';
 //import Numeric Input in order to have numeric input on form
 import NumericInput from 'react-numeric-input';
+import {connect} from 'react-redux';
 
 class Understanding extends Component {
     
@@ -25,4 +26,4 @@ class Understanding extends Component {
     }
 }
 
-export default Understanding;
+export default connect()(Understanding);

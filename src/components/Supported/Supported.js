@@ -1,6 +1,7 @@
 //import dependencies onto page
 import React from 'react';
 import {Component} from 'react';
+import {connect} from 'react-redux';
 //import Numeric Input in order to have numeric input on form
 import NumericInput from 'react-numeric-input';
 
@@ -24,4 +25,4 @@ class Supported extends Component{
     }
 }
 
-export default Supported;
+export default connect()(Supported);

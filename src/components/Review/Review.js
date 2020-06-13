@@ -1,6 +1,7 @@
 //import dependencies onto page
 import React from 'react';
 import {Component} from 'react';
+import {connect} from 'react-redux';
 
 class Review extends Component{
 
@@ -22,4 +23,4 @@ class Review extends Component{
     }
 }
 
-export default Review;
+export default connect()(Review);

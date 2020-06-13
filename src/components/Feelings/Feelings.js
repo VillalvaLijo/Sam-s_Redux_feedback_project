@@ -3,7 +3,7 @@ import React from 'react';
 //import connect from redux in order to make global variables.
 //connect is our provider from react-redux so the entire component needs to be wrapped by connect 
 //otherwise we will get the error saying that component needs to be wraped by a <Provider>
-//import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import {Component} from 'react';
 //import NumericInput from react-numeric-input in order to use it in your input form
 import NumericInput from 'react-numeric-input';
@@ -40,6 +40,6 @@ class Feelings extends Component{
 
 // export default connect(mapStateToProps)(Feelings);
 
-//compiled without redux state
-export default Feelings;
+
+export default connect()(Feelings);
 

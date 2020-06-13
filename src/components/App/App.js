@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
 //import the hash router from react-router-dom in order to switch inbetween commponents by url path
 import { HashRouter as Router, Route, Link} from 'react-router-dom'; 
 import './App.css';
@@ -43,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);

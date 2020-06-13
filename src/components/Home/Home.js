@@ -3,6 +3,7 @@
 //import dependecies
 import React from 'react';
 import {Component} from 'react';
+import {connect} from 'react-redux';
 
 class Home extends Component{
 
@@ -28,4 +29,4 @@ class Home extends Component{
     }
 }
 
-export default Home;
+export default connect()(Home);
