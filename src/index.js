@@ -18,7 +18,7 @@ const feelingsReducer = (state= [], action) =>{
 }
 //write a reducer for understanding page
 const understandingReducer = (state= [], action) =>{
-    //put feedback in Redux state
+    //put understanding in Redux state
     if(action.type === "GET_UNDERSTANDING"){
         console.log("Inside understandingReducer payload: ", action.payload);
         return action.payload
@@ -27,7 +27,14 @@ const understandingReducer = (state= [], action) =>{
 }
 
 //write a reducer for the support page
-
+const supportReducer = (state= [], action) =>{
+    //put support input in Redux state
+    if(action.type === "GET_SUPPORT"){
+        console.log("Inside understandingReducer payload: ", action.payload);
+        return action.payload
+    }
+    return state;
+}
 //write a reducer for the comments page
 
 //combine all the elements of the feedback to be passed back to the POST request at
@@ -39,7 +46,8 @@ const understandingReducer = (state= [], action) =>{
 const storeInstance = createStore(
     combineReducers({
         feelingsReducer,
-        understandingReducer
+        understandingReducer,
+        supportReducer
     }),
 );
 
