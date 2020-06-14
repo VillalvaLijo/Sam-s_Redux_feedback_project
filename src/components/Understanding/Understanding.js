@@ -8,7 +8,8 @@ import {connect} from 'react-redux';
 class Understanding extends Component {
     //create a local state to hold the value of understanding.
     state = {
-        understanding: 0 //intialize property understanding of local state to zero asa placeholder.
+        understanding: 0, //intialize property understanding of local state to zero asa placeholder.
+        inputValue: false
     }
 
     //create a function to update local state with the numeric input
@@ -17,7 +18,8 @@ class Understanding extends Component {
         console.log("Inside updateUnderstanding, ", valueAsNumber); //tried event.target.value, event.target.valueAsNumber
         //update local state with input from the numeric form
         this.setState({
-            understanding: valueAsNumber
+            understanding: valueAsNumber,
+            inputValue: true
         })
     }
 
@@ -34,8 +36,13 @@ class Understanding extends Component {
 
     //create a function to route to the next page (Supported) on the click of the next button
     nextClick = () => {
-        this.submitUnderstanding();
-        this.props.history.push('/supported');
+        if(this.state.inputValue === true){
+            this.submitUnderstanding();
+            this.props.history.push('/supported');
+        }
+        else{
+            alert("No feedback entered, please enter feedback");
+        }
     }
 
 

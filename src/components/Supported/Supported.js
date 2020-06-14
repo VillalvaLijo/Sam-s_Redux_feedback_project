@@ -9,7 +9,8 @@ import NumericInput from 'react-numeric-input';
 class Supported extends Component{
     //create a local state to hold support input from the numeric form
     state={
-        support: 0 //initialize support property to zero as a placeholder.
+        support: 0, //initialize support property to zero as a placeholder.
+        inputValue: false
     }
 
     //create a function to update local state with the numeric input
@@ -18,7 +19,8 @@ class Supported extends Component{
         console.log("Inside updateSupport, ", valueAsNumber);
         //update local state with input from the numeric form
         this.setState({
-            support: valueAsNumber
+            support: valueAsNumber,
+            inputValue: true
         })
     }
 
@@ -26,17 +28,24 @@ class Supported extends Component{
     // in index.js on the click of the next button
     submitSupport = () =>{
         //use a variable to grab input from the numeric form
+    
         this.props.dispatch({
             type: "GET_SUPPORT",
             payload: this.state.support
-        })
+            })
+        
     }
 
 
     //create a function to route to the next page (Comments) on the click of the next button
     nextClick = () => {
+        if (this.state.inputValue == true){
         this.submitSupport();
         this.props.history.push('/comments');
+        }
+        else{
+            alert("No feedback entered, please enter feedback");
+        }
     }
 
     render(){

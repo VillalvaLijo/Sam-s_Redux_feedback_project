@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 
 //Post all feeback entries to the database with a Post request
 router.post('/', (req, res) => {
-    console.log(req.body);
+   
     const feelings = req.body.feelings;
     const understanding = req.body.understanding;
     const support = req.body.support;
