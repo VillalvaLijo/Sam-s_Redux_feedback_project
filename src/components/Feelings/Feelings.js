@@ -9,9 +9,36 @@ import {Component} from 'react';
 import NumericInput from 'react-numeric-input';
 
 class Feelings extends Component{
+    //create a local state to hold feelings input from the numeric form
+    state={
+        feelings: 0 //initialize feeling property to zero as a placeholder.
+    }
+
+    //create a function to update local state with the numeric input
+    //this function is dynamically called ever time the input field for the numeric input is changed.
+    updateFeelings = (valueAsNumber) =>{
+        console.log("Inside updateFeelings, ", valueAsNumber); //tried event.target.value, event.target.valueAsNumber
+        //update local state with input from the numeric form
+        this.setState({
+            feelings: valueAsNumber
+        })
+    }
+
+    //create a function to send the feelings input of the numeric form to the feelings reducer
+    // in index.js on the click of the next button
+    submitFeelings = () =>{
+        //use a variable to grab input from the numeric form
+        let feelings = this.state.feelings//input from numeric form
+        this.props.dispatch({
+            type: "GET_FEELINGS",
+            payload: feelings
+        })
+    }
 
     //create a function to route to the next page (understanding) on the click of the next button
     nextClick = () => {
+        //this.updateFeelings();
+        this.submitFeelings(); //call submitFeelings on button click
         this.props.history.push('/understanding');
     }
 
@@ -24,7 +51,7 @@ class Feelings extends Component{
                 <h1>How are you feeling today?</h1>
                 <form id='feelingInputForm'>
                     <p>Feeling:</p>
-                <NumericInput min={0} max={5} value={1}/>
+                <NumericInput min={0} max={5} onChange = {this.updateFeelings}/>
                 <button onClick = {this.nextClick}>Next</button>
                 </form>
 
