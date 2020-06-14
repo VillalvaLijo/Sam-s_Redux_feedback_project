@@ -1,8 +1,6 @@
 //import dependencies
 import React from 'react';
 //import connect from redux in order to make global variables.
-//connect is our provider from react-redux so the entire component needs to be wrapped by connect 
-//otherwise we will get the error saying that component needs to be wraped by a <Provider>
 import {connect} from 'react-redux';
 import {Component} from 'react';
 //import NumericInput from react-numeric-input in order to use it in your input form
@@ -17,7 +15,7 @@ class Feelings extends Component{
     //create a function to update local state with the numeric input
     //this function is dynamically called ever time the input field for the numeric input is changed.
     updateFeelings = (valueAsNumber) =>{
-        console.log("Inside updateFeelings, ", valueAsNumber); //tried event.target.value, event.target.valueAsNumber
+        console.log("Inside updateFeelings, ", valueAsNumber);
         //update local state with input from the numeric form
         this.setState({
             feelings: valueAsNumber
@@ -42,11 +40,10 @@ class Feelings extends Component{
         this.props.history.push('/understanding');
     }
 
-    //wrap compoenent in a provider
+    
     render(){
         return (
-            //connect is a placeholder for the redux provider that holds redux state.
-            <connect>
+    
             <div>
                 <h1>How are you feeling today?</h1>
                 <form id='feelingInputForm'>
@@ -57,16 +54,11 @@ class Feelings extends Component{
 
 
             </div>
-            </connect>
+            
         )
     }
 
 }
-
-// const mapStateToProps = (reduxStore) => ({ reduxStore})
-
-// export default connect(mapStateToProps)(Feelings);
-
 
 export default connect()(Feelings);
 

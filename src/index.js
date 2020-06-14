@@ -16,9 +16,15 @@ const feelingsReducer = (state= [], action) =>{
     }
     return state;
 }
-
-
 //write a reducer for understanding page
+const understandingReducer = (state= [], action) =>{
+    //put feedback in Redux state
+    if(action.type === "GET_UNDERSTANDING"){
+        console.log("Inside understandingReducer payload: ", action.payload);
+        return action.payload
+    }
+    return state;
+}
 
 //write a reducer for the support page
 
@@ -32,7 +38,8 @@ const feelingsReducer = (state= [], action) =>{
 //create store instance to store states across the project using redux
 const storeInstance = createStore(
     combineReducers({
-        feelingsReducer
+        feelingsReducer,
+        understandingReducer
     }),
 );
 
